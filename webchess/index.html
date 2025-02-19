@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chess Game</title>
+    <link rel="stylesheet" href="/chess/node_modules/@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Montserrat:wght@600&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <script src="/chess/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/chess/node_modules/@chrisoakman/chessboardjs/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <script src="main.js" defer></script>
+    <script src="js/chess-ai.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="game-area">
+            <h1>♟️ Chess Master</h1>
+            <div class="game-controls">
+                <select id="gameMode" class="control-item" aria-label="Game Mode">
+                    <option value="human">Human vs Human</option>
+                    <option value="computer">Human vs Computer</option>
+                </select>
+                <select id="difficulty" class="control-item" aria-label="Difficulty Level">
+                    <option value="2">Easy</option>
+                    <option value="3">Medium</option>
+                    <option value="4">Hard</option>
+                </select>
+            </div>
+            <div id="board"></div>
+            <div class="game-status" id="gameStatus">White to move</div>
+            <div class="controls">
+                <button id="startBtn">New Game</button>
+                <button id="clearBtn">Clear Board</button>
+                <button id="flipBtn">Flip Board</button>
+            </div>
+        </div>
+        <div class="game-info">
+            <div class="info-section">
+                <div class="info-label">Game Status</div>
+                <div id="status" class="info-value"></div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-label">FEN Position</div>
+                <div id="fen" class="info-value"></div>
+            </div>
+            
+            <div class="info-section">
+                <div class="info-label">Move History (PGN)</div>
+                <div id="pgn" class="info-value"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
